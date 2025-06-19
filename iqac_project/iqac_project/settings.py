@@ -134,19 +134,21 @@ ACCOUNT_AUTHENTICATION_METHOD     = 'email'
 ACCOUNT_EMAIL_VERIFICATION        = 'none'    # in prod you might set 'optional' or 'mandatory'
 ACCOUNT_UNIQUE_EMAIL              = True
 
+import os
+
 SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            # ← replace with your real credentials
-            'client_id': '987456241256-3ocm0m0umlb28j80j9b3rb6rm51v6nje.apps.googleusercontent.com',
-            'secret':    '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',
-            'key':       '',
-        },
-        'SCOPE':       ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
-        'DOMAIN':      ['christuniversity.in'],    # enforce only @christuniversity.in
-    }
+  'google': {
+    'APP': {
+      'client_id': os.environ['GOOGLE_CLIENT_ID'],
+      'secret':    os.environ['GOOGLE_CLIENT_SECRET'],
+      'key':       '',
+    },
+    'SCOPE':       ['profile', 'email'],
+    'AUTH_PARAMS': {'access_type': 'online'},
+    'DOMAIN':      ['christuniversity.in'],
+  }
 }
+
 
 # point allauth to your custom adapter that checks the email domain
 SOCIALACCOUNT_ADAPTER = 'core.adapters.SchoolSocialAccountAdapter'
