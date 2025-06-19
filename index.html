@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infotech Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Infotech Lab</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <div class="navbar-user" id="navbarUser">
+      <span id="username-badge">User</span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dashboard-container fade-in">
+    <h1>Welcome to IQAC Suite and Transcript Automater</h1>
+    <h2 id="welcome-message">Welcome, User!</h2>
+    <p>Select an application to launch:</p>
+
+    <div class="cards">
+      <a href="#" class="card fade-in delay-1">
+        <h2>IQAC Suite</h2>
+        <p>Event proposal and report management.</p>
+        <span>Launch →</span>
+      </a>
+
+      <a href="#" class="card fade-in delay-2">
+        <h2>Graduate Transcript</h2>
+        <p>Graduate characteristics report.</p>
+        <span>Launch →</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+
+</html>
